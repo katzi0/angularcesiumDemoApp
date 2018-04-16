@@ -17,4 +17,17 @@
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
 </ul>
-
+<ac-map>
+  <ac-layer acFor="let plane of planes$" [show]="showTracks" [context]="this">
+    <ac-billboard-desc props="{
+                    image: plane.image,
+                    position: plane.position
+                  }">
+    </ac-billboard-desc>
+    <ac-label-desc props="{
+                  position: plane.position,
+                  text: plane.name
+          }">
+    </ac-label-desc>
+  </ac-layer>
+</ac-map>
